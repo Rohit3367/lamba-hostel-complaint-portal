@@ -1,57 +1,44 @@
-import { use, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './pane.css';
-import {getComplaintData} from '../api/api.js';
 import LoadingPanel from './LoadingPanel.js';
+import ComplaintTableStaff from './ComplaintTableStaff.js';
 
 function ManageComplaintPanel(props) {
-    const staffKey = props.staffKey;
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
+            setLoading(true); // important: reset loading when switching staff
+
             try {
-                const res = await getComplaintData(); // waits for the API to finish
-                console.log("DATA from API:", res);
-                setData(res.find(item => item.id === staffKey));                // then sets your data
+                const res = await fetch("http://localhost:4000/complaintsHandled");
+                const all = await res.json();
+
+                console.log("ALL complaintHandled from API:", all);
+
+                // pick the block for the active staff id
+                const staffBlock = all.find(item => item.id === props.staffKey);
+
+                setData(staffBlock || { complaintsHandled: [] });
             } catch (err) {
-                console.error(err);          // handles any error thrown
-                setData({status: "error", message: "Unable to fetch data"});
+                console.error(err);
+                setData({ complaintsHandled: [], status: "error", message: "Unable to fetch data" });
             } finally {
-                setLoading(false);           // runs no matter what (success or error)
+                setLoading(false);
             }
         };
 
         fetchData();
-    }, []);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const res = await getComplaintData(); // waits for the API to finish
-                console.log("DATA from API:", res);
-                setData(res.find(item => item.id === staffKey));                // then sets your data
-            } catch (err) {
-                console.error(err);          // handles any error thrown
-                setData({status: "error", message: "Unable to fetch data"});
-            } finally {
-                setLoading(false);           // runs no matter what (success or error)
-            }
-        };
-
-        fetchData();
-    }, [staffKey]);
-
-    useEffect(() => {
-        console.log("DATA state updated:", data);
-    }, [data]);
-
+    }, [props.staffKey]);
 
 
     return (
         <div>
             {loading && <LoadingPanel />}
-            {!loading && "Manage Complaints"}
+            {!loading && 
+                <ComplaintTableStaff complaintsHandled={data.complaintsHandled} staffKey={props.staffKey} />
+            }
         </div>
     );
 }   

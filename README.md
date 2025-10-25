@@ -1,4 +1,4 @@
-A front-end application created as part of **Milan X Lambda Hackathon 2023**.
+A front-end application created as part of **Milan X Lambda Hackathon 2025**.
 
 - Built using **ReactJS**
 - A simple application for tracking hostel complaints:
