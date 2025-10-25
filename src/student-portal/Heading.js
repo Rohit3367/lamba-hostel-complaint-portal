@@ -11,7 +11,7 @@ function Heading(props) {
   const currentTab = props.currentTab;
   const currentUser = props.currentUser;
 
-  console.log("cuRREN TABS", currentTab);
+  console.log("CURRENT TABS", currentTab);
   return (
     <header className="App-header container" 
             style={{marginLeft: '0rem', marginRight: '0rem', 
@@ -29,7 +29,7 @@ function Heading(props) {
           {currentUser.role == "Student" && tabs.find(tab => tab === "Track Complaints") && <span className='col-md-2'> <Tracking isCurrentTab={currentTab === "Track Complaints"} onTabChange={props.handleTabChange}/> </span>}
           {currentUser.role == "Staff" && tabs.find(tab => tab === "Manage Complaints") && <span className='col-md-2'> <Manage isCurrentTab={currentTab === "Manage Complaints"} onTabChange={props.handleTabChange}/> </span>}
           {currentUser.role == "Staff" && <span className='col-md-2'></span>}
-          <span className='col-md-3'> <UserHandle users={props.users} handleSelect={props.handleSelect} currentUser={props.currentUser}/> </span>
+          <span className='col-md-3'> <UserHandle users={props.users} handleSelect={props.handleSelect} currentUser={props.currentUser} /> </span>
         </span>
     </header>
   );
