@@ -1,6 +1,6 @@
 import Heading from './student-portal/Heading';
 import './App.css';
-import { useState, useEffect, useRef, use } from 'react';
+import { useState, useEffect, useRef} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { STATESPACE } from './data/statespace.js';
 import Pane from './Pane.js';

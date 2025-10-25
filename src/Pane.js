@@ -1,6 +1,7 @@
 import './pane/pane.css';
 import ManageComplaintPanel from './pane/ManageComplaintPanel.js';
 import RegisterComplaintPanel from './pane/RegisterComplaintPanel.js';
+import TrackComplaintPanel from './pane/TrackComplaintPanel.js';
 
 function Pane(props) {  
     const currentTab = props.currentTab;
@@ -13,7 +14,7 @@ function Pane(props) {
       <div style={{marginLeft: '1rem', marginTop: '1rem', textAlign: 'left'}}>
         {renderManage && <ManageComplaintPanel staffKey={props.currentUser.id} />}
         {renderRegister && <RegisterComplaintPanel studentKey={props.currentUser.id} />}
-        {renderTracking && <div>This is the Track Complaint Panel</div>}
+        {renderTracking && <TrackComplaintPanel studentKey={props.currentUser.id} user = {props.currentUser}/>}
       </div>
     );
 }   
