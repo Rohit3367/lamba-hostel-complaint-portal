@@ -1,0 +1,7 @@
+[
+  { "name": "Victor Von Doom", "role": "Student", "id": "101" , "rollnum": "S101"},
+  { "name": "Peter Parker", "role": "Student", "id": "102" , "rollnum": "S122"},
+  { "name": "Bruce Banner", "role": "Student", "id": "103" , "rollnum": "S103"},
+  { "name": "Tony Stark", "role": "Staff",  "id": "211" },
+  { "name": "Reed Richards", "role": "Staff",  "id": "212" }
+]

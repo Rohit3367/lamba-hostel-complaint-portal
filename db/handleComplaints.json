@@ -1,0 +1,11 @@
+[
+    {"id": "211", "name": "Tony Stark", "complaintsHandled": [
+        { "complaintId": "C001", "rollNum": "S101", "status": "Open" },
+        { "complaintId": "C005", "rollNum": "S122", "status": "Resolved" }
+    ]},
+    {"id": "212", "name": "Reed Richards", "complaintsHandled": [
+        { "complaintId": "C002", "rollNum": "S101", "status": "Resolved" },
+        { "complaintId": "C007", "rollNum": "S103", "status": "In Progress" },
+        { "complaintId": "C008", "rollNum": "S122", "status": "Rejected" }
+    ]}
+]

@@ -1,0 +1,19 @@
+[{
+    "id": "101", "rollNum": "S101", "complaints": [
+        { "complaintId": "C001", "status": "Open", "description": "Leaking faucet in room 12A." },
+        { "complaintId": "C002", "status": "Resolved", "description": "Broken window in common area." },
+        {"complaintId": "C003", "status": "In Progress", "description": "No hot water in shower."},
+        {"complaintId": "C004", "status": "Open", "description": "Noise complaint in room 12B."}
+    ]
+}, {
+    "id": "102", "rollNum": "S122", "complaints": [
+        { "complaintId": "C005", "status": "Resolved", "description": "Clogged toilet in bathroom." },
+        { "complaintId": "C006", "status": "Open", "description": "Air conditioning not working." },
+        {"complaintId": "C008", "status": "Rejected", "description": "Wi-Fi connectivity issues." }
+    ]
+}, {
+    "id": "103", "rollNum": "S103", "complaints": [
+        { "complaintId": "C007", "status": "In Progress", "description": "Broken chair in study room." }
+    ]
+} 
+]
